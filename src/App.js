@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { GlobalContext } from "./context/GlobalState";
 
-function App() {
+import Pokedex from "./components/Pokedex";
+import PokemonDetails from "./components/PokemonDetails";
+
+const App = () => {
+  const { getAllPokes } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getAllPokes();
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Pokedex} />
+        <Route path="/:id" component={PokemonDetails} />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
