@@ -49,3 +49,98 @@
   transform: scale(1.06);
   box-shadow: 0px 0px 15px rgb(0, 85, 255) !important;
 }
+
+.pokemon-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+}
+
+.pokemon-page-bg {
+  position: absolute;
+  background: url(images/BG_Pok.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -30;
+  filter: blur(30px);
+}
+
+.pokemon-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-image > img {
+  filter: drop-shadow(-10px 4px 5px rgba(0, 0, 0, 0.3));
+}
+
+.pokemon-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px;
+}
+
+.pokemon-content > h1,
+h3 {
+  font-family: "Nerko One", cursive;
+  text-transform: capitalize;
+  font-weight: lighter;
+  letter-spacing: 1.2px;
+}
+
+.pokemon-content p {
+  font-family: "Roboto";
+  padding-top: 15px;
+}
+
+.pokemon-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.return-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.MuiButton-root {
+  background: rgb(255, 204, 1) !important;
+  border-radius: 25px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokemon-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chartjs-render-monitor {
+    visibility: hidden !important;
+  }
+
+  .pokemon-image > img {
+    filter: drop-shadow(-5px 4px 3px rgba(0, 0, 0, 0.2));
+    width: 40%;
+  }
+
+  .pokemon-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    padding-bottom: 150px;
+  }
+}
