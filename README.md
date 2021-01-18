@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-App demo:
+## App Demo
 https://your-pokedex.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
